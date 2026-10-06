@@ -14,11 +14,16 @@ public class Fantasma : MonoBehaviour
 
     //Methods
 
-    public void Poseer (Juguete juguetePoseido)
+    public void Poseer (Juguete objetivo)
     {
-        if (juguetePoseido.estaPoseido == false)
+        if (objetivo.estaPoseido == false)
         {
-            juguetePoseido.estaPoseido = true;
+            // 1. Cambias el estado interno del juguete
+            objetivo.estaPoseido = true; 
+        
+            // 2. ASIGNACIÓN EN MEMORIA: 
+            // Le dices al fantasma que guarde este juguete en su variable de la línea 9
+            juguetePoseido = objetivo;
         }
         else print ("Este objeto ya esta poseido");
     }
